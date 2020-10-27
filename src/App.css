@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+  color: aliceblue;
+}
+* {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #fc466b, #3f5efb);
+}
