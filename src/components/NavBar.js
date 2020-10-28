@@ -11,9 +11,19 @@ const NavBar = () => {
   const [login, setlogin] = useState(false)
   const [register, setRegister] = useState(false)
   const [forgot, setForgot] = useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setpassword] = useState('')
+
   const handelSubmit = (e) => {
     e.preventDefault()
     console.log('submitted')
+  }
+  const handelChange = ({ currentTarget: input }) => {
+    if (input.name == 'email') {
+      setEmail(input.value)
+    } else {
+      setpassword(input.value)
+    }
   }
   const showSidebar = () => setSidebar(!sidebar)
   const showlogin = () => {
@@ -63,6 +73,9 @@ const NavBar = () => {
           </div>
         </ul>
         <Login
+          email={email}
+          password={password}
+          handelChange={handelChange}
           login={login}
           showlogin={showlogin}
           showRegister={showRegister}
