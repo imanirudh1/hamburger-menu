@@ -1,5 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
 .container {
   background: linear-gradient(to right, #fc466b, #3f5efb);
@@ -136,4 +134,5 @@
 }
 .content span {
   color: #2354dad0;
+  cursor: pointer;
 }
