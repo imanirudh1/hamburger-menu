@@ -2,7 +2,10 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import * as FaIcons from 'react-icons/fa'
 import * as AiIcons from 'react-icons/ai'
+import Forgot from '../screen/Forgot'
 import './NavBar.css'
+import Register from '../screen/Register'
+import Login from '../screen/Login'
 const NavBar = () => {
   const [sidebar, setSidebar] = useState(false)
   const [login, setlogin] = useState(false)
@@ -55,66 +58,25 @@ const NavBar = () => {
             </div>
           </div>
         </ul>
-        <div className={login ? 'login active' : 'login'}>
-          <Link to='#' className='menu-bars-login'>
-            <AiIcons.AiOutlineClose onClick={showlogin} />
-          </Link>
-          <div className='content'>
-            <h1>Welcome Back!</h1>
-            <label>Email</label>
-            <input />
-            <label>Password</label>
-            <input type='password' />
-            <button>Login</button>
-            <p>
-              Do not have an account?{' '}
-              <span onClick={showRegister}>Register</span>
-              <br></br>
-              Forgot Password?{' '}
-              <span onClick={showForgotScreen}>Reset Password</span>
-            </p>
-          </div>
-        </div>
+        <Login
+          login={login}
+          showlogin={showlogin}
+          showRegister={showRegister}
+          showForgotScreen={showForgotScreen}
+        />
 
-        <div className={register ? 'login active' : 'login'}>
-          <Link to='#' className='menu-bars-login'>
-            <AiIcons.AiOutlineClose onClick={showRegister} />
-          </Link>
+        <Register
+          showRegister={showRegister}
+          register={register}
+          showlogin={showlogin}
+        />
 
-          <div className='content'>
-            <h1>Register</h1>
-            <label>Name</label>
-            <input type='email' placeholder='Name' />
-            <label>Email</label>
-            <input placeholder='Email' />
-            <label>Password</label>
-            <input type='password' placeholder='Password' />
-            <button>Register</button>
-            <p>
-              Have an account? <span onClick={showlogin}>Login</span>
-            </p>
-          </div>
-        </div>
-        <div className={forgot ? 'login active' : 'login'}>
-          <Link to='#' className='menu-bars-login'>
-            <AiIcons.AiOutlineClose onClick={showForgotScreen} />
-          </Link>
-
-          <div className='content'>
-            <h1>Forgot Password?</h1>
-
-            <label>Email</label>
-            <input placeholder='Email' />
-
-            <button>Get Code</button>
-            <p>
-              Do not have an account?{' '}
-              <span onClick={showRegister}>Register</span>
-              <br></br>
-              Remember Password? <span onClick={showlogin}>Login</span>
-            </p>
-          </div>
-        </div>
+        <Forgot
+          showForgotScreen={showForgotScreen}
+          forgot={forgot}
+          showRegister={showRegister}
+          showlogin={showlogin}
+        />
       </nav>
     </div>
   )
