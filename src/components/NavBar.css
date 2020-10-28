@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
 .container {
   background: linear-gradient(to right, #fc466b, #3f5efb);
   height: 100vh;
@@ -6,7 +8,7 @@
 }
 .navbar {
   background-color: rgb(253, 253, 253);
-  height: 80px;
+  height: 70px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -27,6 +29,7 @@
   top: 0;
   right: -100%;
   transition: 850ms;
+  box-shadow: -5px 0px 5px 2px rgba(0, 0, 0, 0.1);
 }
 .nav-menu.active {
   right: 0;
@@ -41,10 +44,9 @@
 }
 .nav-item {
   padding: 15px;
-  font-size: 12px;
-  font-weight: bold;
-
-  color: #647df8;
+  font-size: 14px;
+  font-weight: 300;
+  color: #2143ec;
   border-bottom: 2px dashed rgba(165, 165, 165, 0.2);
 }
 .navbar-toggle {
@@ -57,4 +59,94 @@
 }
 .user-sec {
   margin-top: 25px;
+}
+.user-sec li {
+  cursor: pointer;
+}
+
+.login {
+  background-color: rgb(255, 255, 255);
+  font-size: 1rem;
+  box-shadow: -5px 0px 5px 2px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  width: 300px;
+  position: absolute;
+  right: -120%;
+  /* right: 0; */
+  transition: 250ms;
+}
+.login.active {
+  right: 0;
+  transition: 350ms;
+}
+.menu-bars-login {
+  font-size: 1rem;
+  padding: 20px;
+  display: flex;
+  margin-right: 10px;
+  justify-content: flex-end;
+}
+.register {
+  background-color: rgb(176, 4, 255);
+  height: 100vh;
+  width: 300px;
+  position: absolute;
+  right: -120%;
+  /* right: 0; */
+  transition: 250ms;
+}
+.register.active {
+  right: 0;
+  transition: 350ms;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 80px auto;
+}
+.content h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.content input {
+  border: 2px solid rgba(165, 163, 163, 0.2);
+  height: 35px;
+  border-radius: 6px;
+  margin-top: 5px;
+  margin-bottom: 18px;
+}
+.content input::placeholder {
+  color: rgba(112, 110, 110, 0.6);
+  padding: 0 10px;
+}
+.content label {
+  font-weight: bold;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.6);
+}
+.content button {
+  background-color: #2354da;
+  color: rgba(255, 255, 255, 0.945);
+  font-size: 1rem;
+  border: none;
+  font-weight: bold;
+  padding: 14px 0;
+  border-radius: 6px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.content p {
+  margin-top: 10px;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  line-height: 19px;
+}
+.content span {
+  color: #2354dad0;
 }
