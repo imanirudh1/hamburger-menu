@@ -7,9 +7,23 @@ const NavBar = () => {
   const [sidebar, setSidebar] = useState(false)
   const [login, setlogin] = useState(false)
   const [register, setRegister] = useState(false)
+  const [forgot, setForgot] = useState(false)
   const showSidebar = () => setSidebar(!sidebar)
-  const showlogin = () => setlogin(!login)
-  const showRegister = () => setRegister(!register)
+  const showlogin = () => {
+    setlogin(!login)
+    setForgot(false)
+    setRegister(false)
+  }
+  const showRegister = () => {
+    setRegister(!register)
+    setlogin(false)
+    setForgot(false)
+  }
+  const showForgotScreen = () => {
+    setForgot(!forgot)
+    setlogin(false)
+    setRegister(false)
+  }
   return (
     <div className='container'>
       <div className='navbar'>
@@ -50,12 +64,14 @@ const NavBar = () => {
             <label>Email</label>
             <input />
             <label>Password</label>
-            <input />
+            <input type='password' />
             <button>Login</button>
             <p>
-              Do not have an account? <span>Register</span>
+              Do not have an account?{' '}
+              <span onClick={showRegister}>Register</span>
               <br></br>
-              Forgot Password? <span>Reset Password</span>
+              Forgot Password?{' '}
+              <span onClick={showForgotScreen}>Reset Password</span>
             </p>
           </div>
         </div>
@@ -68,14 +84,34 @@ const NavBar = () => {
           <div className='content'>
             <h1>Register</h1>
             <label>Name</label>
-            <input placeholder='Name' />
+            <input type='email' placeholder='Name' />
             <label>Email</label>
             <input placeholder='Email' />
             <label>Password</label>
-            <input placeholder='Password' />
+            <input type='password' placeholder='Password' />
             <button>Register</button>
             <p>
-              Have an account? <span>Login</span>
+              Have an account? <span onClick={showlogin}>Login</span>
+            </p>
+          </div>
+        </div>
+        <div className={forgot ? 'login active' : 'login'}>
+          <Link to='#' className='menu-bars-login'>
+            <AiIcons.AiOutlineClose onClick={showForgotScreen} />
+          </Link>
+
+          <div className='content'>
+            <h1>Forgot Password?</h1>
+
+            <label>Email</label>
+            <input placeholder='Email' />
+
+            <button>Get Code</button>
+            <p>
+              Do not have an account?{' '}
+              <span onClick={showRegister}>Register</span>
+              <br></br>
+              Remember Password? <span onClick={showlogin}>Login</span>
             </p>
           </div>
         </div>

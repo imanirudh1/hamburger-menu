@@ -86,19 +86,6 @@
   margin-right: 10px;
   justify-content: flex-end;
 }
-.register {
-  background-color: rgb(176, 4, 255);
-  height: 100vh;
-  width: 300px;
-  position: absolute;
-  right: -120%;
-  /* right: 0; */
-  transition: 250ms;
-}
-.register.active {
-  right: 0;
-  transition: 350ms;
-}
 
 .content {
   display: flex;
