@@ -7,6 +7,9 @@ const Login = ({
   showlogin,
   showRegister,
   showForgotScreen,
+  email,
+  password,
+  handelChange,
 }) => {
   return (
     <div className={login ? 'login active' : 'login'}>
@@ -17,9 +20,14 @@ const Login = ({
         <div className='content'>
           <h1>Welcome Back!</h1>
           <label>Email</label>
-          <input />
+          <input name='email' value={email} onChange={handelChange} />
           <label>Password</label>
-          <input type='password' />
+          <input
+            name='password'
+            onChange={handelChange}
+            value={password}
+            type='password'
+          />
           <button>Login</button>
           <p>
             Do not have an account? <span onClick={showRegister}>Register</span>
