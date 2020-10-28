@@ -11,6 +11,10 @@ const NavBar = () => {
   const [login, setlogin] = useState(false)
   const [register, setRegister] = useState(false)
   const [forgot, setForgot] = useState(false)
+  const handelSubmit = (e) => {
+    e.preventDefault()
+    console.log('submitted')
+  }
   const showSidebar = () => setSidebar(!sidebar)
   const showlogin = () => {
     setlogin(!login)
@@ -63,15 +67,18 @@ const NavBar = () => {
           showlogin={showlogin}
           showRegister={showRegister}
           showForgotScreen={showForgotScreen}
+          handelSubmit={handelSubmit}
         />
 
         <Register
+          handelSubmit={handelSubmit}
           showRegister={showRegister}
           register={register}
           showlogin={showlogin}
         />
 
         <Forgot
+          handelSubmit={handelSubmit}
           showForgotScreen={showForgotScreen}
           forgot={forgot}
           showRegister={showRegister}
