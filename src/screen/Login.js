@@ -7,8 +7,7 @@ const Login = ({
   showlogin,
   showRegister,
   showForgotScreen,
-  email,
-  password,
+  account,
   handelChange,
 }) => {
   return (
@@ -20,12 +19,16 @@ const Login = ({
         <div className='content'>
           <h1>Welcome Back!</h1>
           <label>Email</label>
-          <input name='email' value={email} onChange={handelChange} />
+          <input
+            name='email'
+            value={account['email']}
+            onChange={handelChange}
+          />
           <label>Password</label>
           <input
             name='password'
             onChange={handelChange}
-            value={password}
+            value={account['password']}
             type='password'
           />
           <button>Login</button>
