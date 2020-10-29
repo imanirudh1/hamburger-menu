@@ -30,7 +30,6 @@ const NavBar = () => {
   const handelSubmit = (e) => {
     e.preventDefault()
     const error = validate()
-    console.log(error)
     setError(error)
     if (error) return
     console.log('submitted')
