@@ -9,6 +9,7 @@ const Forgot = ({
   showlogin,
   account,
   handelChange,
+  errors,
 }) => {
   return (
     <div className={forgot ? 'login active' : 'login'}>
@@ -26,6 +27,7 @@ const Forgot = ({
             onChange={handelChange}
             placeholder='Email'
           />
+          {errors.email && <div className='error-input'>{errors.email}</div>}
 
           <button>Get Code</button>
           <p>

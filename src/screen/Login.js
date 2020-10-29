@@ -9,6 +9,7 @@ const Login = ({
   showForgotScreen,
   account,
   handelChange,
+  errors,
 }) => {
   return (
     <div className={login ? 'login active' : 'login'}>
@@ -24,6 +25,7 @@ const Login = ({
             value={account['email']}
             onChange={handelChange}
           />
+          {errors.email && <div className='error-input'>{errors.email}</div>}
           <label>Password</label>
           <input
             name='password'
@@ -31,6 +33,9 @@ const Login = ({
             value={account['password']}
             type='password'
           />
+          {errors.password && (
+            <div className='error-input'>{errors.password}</div>
+          )}
           <button>Login</button>
           <p>
             Do not have an account? <span onClick={showRegister}>Register</span>

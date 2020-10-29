@@ -8,6 +8,7 @@ const Register = ({
   showlogin,
   account,
   handelChange,
+  errors,
 }) => {
   return (
     <div className={register ? 'login active' : 'login'}>
@@ -26,6 +27,7 @@ const Register = ({
             type='text'
             placeholder='Name'
           />
+          {errors.name && <div className='error-input'>{errors.name}</div>}
           <label>Email</label>
           <input
             name='email'
@@ -33,6 +35,7 @@ const Register = ({
             onChange={handelChange}
             placeholder='Email'
           />
+          {errors.email && <div className='error-input'>{errors.email}</div>}
           <label>Password</label>
           <input
             name='password'
@@ -41,6 +44,9 @@ const Register = ({
             type='password'
             placeholder='Password'
           />
+          {errors.password && (
+            <div className='error-input'>{errors.password}</div>
+          )}
           <button>Register</button>
           <p>
             Have an account? <span onClick={showlogin}>Login</span>

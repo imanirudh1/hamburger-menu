@@ -12,9 +12,27 @@ const NavBar = () => {
   const [register, setRegister] = useState(false)
   const [forgot, setForgot] = useState(false)
   const [account, setAccount] = useState({ name: '', email: '', password: '' })
+  const [errors, setError] = useState({})
+  const validate = () => {
+    const err = {}
+    if (account.email.trim() === '') {
+      err.email = 'Email is Required'
+    }
+    if (account.password.trim() === '') {
+      err.password = 'Password is Required'
+    }
+    if (account.name.trim() === '') {
+      err.name = 'Name is Required'
+    }
+    return Object.keys(err).length === 0 ? null : err
+  }
 
   const handelSubmit = (e) => {
     e.preventDefault()
+    const error = validate()
+    console.log(error)
+    setError(error)
+    if (error) return
     console.log('submitted')
   }
   const handelChange = ({ currentTarget: input }) => {
@@ -70,6 +88,7 @@ const NavBar = () => {
           </div>
         </ul>
         <Login
+          errors={errors}
           account={account}
           handelChange={handelChange}
           login={login}
@@ -80,6 +99,7 @@ const NavBar = () => {
         />
 
         <Register
+          errors={errors}
           account={account}
           handelChange={handelChange}
           handelSubmit={handelSubmit}
@@ -89,6 +109,7 @@ const NavBar = () => {
         />
 
         <Forgot
+          errors={errors}
           account={account}
           handelChange={handelChange}
           handelSubmit={handelSubmit}

@@ -136,3 +136,12 @@
   color: #2354dad0;
   cursor: pointer;
 }
+.error-input {
+  font-size: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  background-color: #fc466ab6;
+  padding: 2px 6px;
+  border-radius: 6px;
+  color: rgb(255, 255, 255);
+}
