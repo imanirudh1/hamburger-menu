@@ -15,8 +15,14 @@
 .menu-bars {
   font-size: 2rem;
   color: #4677fc;
+  margin-top: 12px;
+}
+.menu-bars {
+  font-size: 2rem;
+  color: #4677fc;
   margin-top: 0px;
 }
+
 .nav-menu {
   background-color: #fff;
   width: 250px;

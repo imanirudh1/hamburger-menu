@@ -31,7 +31,7 @@ const NavBar = () => {
     e.preventDefault()
     const error = validate()
     setError(error || {})
-    console.log(error)
+
     if (error) return
     console.log('submitted')
   }
