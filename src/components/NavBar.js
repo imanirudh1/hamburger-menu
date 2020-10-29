@@ -11,9 +11,7 @@ const NavBar = () => {
   const [login, setlogin] = useState(false)
   const [register, setRegister] = useState(false)
   const [forgot, setForgot] = useState(false)
-  const [account, setAccount] = useState({ email: '', password: '' })
-  // const [email, setEmail] = useState('')
-  // const [password, setpassword] = useState('')
+  const [account, setAccount] = useState({ name: '', email: '', password: '' })
 
   const handelSubmit = (e) => {
     e.preventDefault()
@@ -72,8 +70,6 @@ const NavBar = () => {
           </div>
         </ul>
         <Login
-          // email={email}
-          // password={password}
           account={account}
           handelChange={handelChange}
           login={login}
@@ -84,6 +80,8 @@ const NavBar = () => {
         />
 
         <Register
+          account={account}
+          handelChange={handelChange}
           handelSubmit={handelSubmit}
           showRegister={showRegister}
           register={register}
@@ -91,6 +89,8 @@ const NavBar = () => {
         />
 
         <Forgot
+          account={account}
+          handelChange={handelChange}
           handelSubmit={handelSubmit}
           showForgotScreen={showForgotScreen}
           forgot={forgot}

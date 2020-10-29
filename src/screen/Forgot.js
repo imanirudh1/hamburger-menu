@@ -7,6 +7,8 @@ const Forgot = ({
   showRegister,
   forgot,
   showlogin,
+  account,
+  handelChange,
 }) => {
   return (
     <div className={forgot ? 'login active' : 'login'}>
@@ -18,7 +20,12 @@ const Forgot = ({
           <h1>Forgot Password?</h1>
 
           <label>Email</label>
-          <input placeholder='Email' />
+          <input
+            name='email'
+            value={account['email']}
+            onChange={handelChange}
+            placeholder='Email'
+          />
 
           <button>Get Code</button>
           <p>
